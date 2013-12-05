@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205212011) do
+ActiveRecord::Schema.define(version: 20131205221014) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
@@ -41,8 +41,42 @@ ActiveRecord::Schema.define(version: 20131205212011) do
     t.datetime "updated_at"
   end
 
+  create_table "coupons", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.float    "discount"
+    t.integer  "coupon_type_id"
+    t.integer  "coupon_state_id"
+    t.integer  "admin_id"
+    t.integer  "consortium_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "store_phones", force: true do |t|
+    t.string   "phone"
+    t.integer  "store_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "store_types", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stores", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "mail"
+    t.text     "reference"
+    t.boolean  "has_parking"
+    t.boolean  "has_valet"
+    t.integer  "store_type_id"
+    t.integer  "consortium_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
