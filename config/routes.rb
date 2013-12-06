@@ -1,5 +1,8 @@
 Qpon::Application.routes.draw do
 
+  devise_for :consortia
+  devise_for :users
+  devise_for :admins
   root "coupons#index"
 
   resources :coupons
