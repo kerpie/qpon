@@ -1,14 +1,14 @@
 $ ->
-	$("body").on "click",".editCouponType",->
+	$("body").on "click",".editStoreType",->
 		$("#update_id").val($(this).data("id"))
-		$("#coupon_type_list tbody tr.toChange").each ->
+		$("#store_type_list tbody tr.toChange").each ->
 			$(this).removeClass("toChange")
 		$(this).parents("tr").addClass("toChange")
 		$("#update_form").show()
 
-	$(".new_coupon_type").click ->
+	$(".new_store_type").click ->
 		$(this).parent().hide()
 		$("#new_form").show()
 
-	$("body").on "click", ".destroyCouponType",->
+	$("body").on "click", ".destroyStoreType",->
 		$(this).parents("tr").hide()

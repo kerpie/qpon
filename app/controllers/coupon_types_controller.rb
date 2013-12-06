@@ -21,4 +21,12 @@ class CouponTypesController < ApplicationController
   		format.js
   	end
   end
+
+  def destroy
+    @coupon_type = CouponType.find(params[:id])
+    @coupon_type.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
 end

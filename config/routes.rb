@@ -5,9 +5,22 @@ Qpon::Application.routes.draw do
   resources :coupons
 
   #CouponTypes
-  get "coupon_types/index"
-  post "coupon_types/update", as: :update_coupon_type
-  post "coupon_types/create", as: :create_coupon_type
+  get "coupon_types/index" => "coupon_types#index", as: :index_coupon_type
+  post "coupon_types/update" => "coupon_types#update", as: :update_coupon_type
+  post "coupon_types/create" => "coupon_types#create", as: :create_coupon_type
+  get "coupon_types/destroy/:id" => "coupon_types#destroy", as: :destroy_coupon_type
+
+  #CouponStates
+  get "coupon_states/index" => "coupon_states#index", as: :index_coupon_state
+  post "coupon_states/update" => "coupon_states#update", as: :update_coupon_state
+  post "coupon_states/create" => "coupon_states#create", as: :create_coupon_state
+  get "coupon_states/destroy/:id" => "coupon_states#destroy", as: :destroy_coupon_state
+
+  #CouponTypes
+  get "store_types/index" => "store_types#index", as: :index_store_type
+  post "store_types/update" => "store_types#update", as: :update_store_type
+  post "store_types/create" => "store_types#create", as: :create_store_type
+  get "store_types/destroy/:id" => "store_types#destroy", as: :destroy_store_type
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
