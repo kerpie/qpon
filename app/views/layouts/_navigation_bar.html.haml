@@ -1,0 +1,40 @@
+/ #Consorcios
+/ 	%ul
+/ 		-if consortium_signed_in?
+/ 			%li
+/ 				= link_to "(Consorcio) Editar perfil", edit_consortium_registration_path
+/ 			%li
+/ 				= link_to "(Consorcio) Cerrar sesion", destroy_consortium_session_path, method: :delete
+/ 		-else
+/ 			%li
+/ 				= link_to "(Consorcio) Registrarse", new_consortium_registration_path
+/ 			%li
+/ 				= link_to "(Consorcio) Iniciar Sesion", new_consortium_session_path
+
+/ #Admins
+/ 	%ul
+/ 		-if admin_signed_in?
+/ 			%li
+/ 				= link_to "(Administrador) Editar perfil", edit_admin_registration_path
+/ 			%li
+/ 				= link_to "(Administrador) Cerrar sesion", destroy_admin_session_path, method: :delete
+/ 		-else
+/ 			%li
+/ 				= link_to "(Administrador) Registrarse", new_admin_registration_path
+/ 			%li
+/ 				= link_to "(Administrador) Iniciar Sesion", new_admin_session_path
+
+
+/ #Users
+/ 	%ul
+/ 		-if user_signed_in?
+/ 			%li
+/ 				= link_to "Editar perfil", edit_user_registration_path
+/ 			%li
+/ 				= link_to "Cerrar sesion", destroy_user_session_path, method: :delete
+/ 		-else
+/ 			%li
+/ 				= link_to "Registrarse", new_user_registration_path
+/ 			%li
+/ 				= link_to "Iniciar Sesion", new_user_session_path
+

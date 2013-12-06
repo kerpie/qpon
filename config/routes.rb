@@ -1,12 +1,14 @@
 Qpon::Application.routes.draw do
-  root "coupon#index"
-  get "coupon/index"
-  get "coupon/show"
-  get "coupon/new"
-  get "coupon/update"
-  get "coupon/destroy"
-  get "coupon/edit"
-  get "coupon/create"
+
+  root "coupons#index"
+
+  resources :coupons
+
+  #CouponTypes
+  get "coupon_types/index"
+  post "coupon_types/update", as: :update_coupon_type
+  post "coupon_types/create", as: :create_coupon_type
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,7 +5,7 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body
-		.container
-			=render "layouts/navigation_bar"
-			.wrapper
-				= yield
+		#navbar
+			= render "layouts/navigation_bar"
+		#content
+			= yield
